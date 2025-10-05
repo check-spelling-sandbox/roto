@@ -68,7 +68,10 @@ reloadable
 routecore
 rustc
 safi
+SGe
+SGt
 signode
+SLe
 sourcecode
 SPHINXBUILD
 SPHINXPROJ
@@ -76,6 +79,7 @@ targ
 Terts
 todocname
 toolbar
+UGe
 uninit
 unionfind
 Unskipped
