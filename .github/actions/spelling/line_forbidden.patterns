@@ -102,7 +102,7 @@
 # - Perhaps you're missing a verb between the noun and the second article.
 # - Or, perhaps you should remove the first verb and treat the intervening word as a verb?
 # - In some cases you should add a `,` between the noun and the second article.
-\s(?:an?|the)\s(?!wh|how\b)[A-Za-z][a-z]+[a-qs-z]\s(?:an?|the)\s
+#\s(?:an?|the)\s(?!wh|how\b)[A-Za-z][a-z]+[a-qs-z]\s(?:an?|the)\s
 
 # Should only be one of `a`, `an`, or `the`
 \b(?:(?:an?|the)\s+){2,}\b
