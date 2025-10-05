@@ -622,7 +622,7 @@ module. Multiple ``super`` keywords can appear at the start of a path.
     super.super.foo.square
 
 There are 3 special identifiers that can only be used at the start of a path
-and automatically make the path an absolute path:
+and automatically make the path into an absolute path:
 
 - ``pkg`` for the current package 
 - ``std`` for the Roto standard library
