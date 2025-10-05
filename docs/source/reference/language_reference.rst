@@ -56,7 +56,7 @@ There are several types at Roto's core, which can be expressed as literals.
 - :roto:ref:`Asn`: AS number
 
 There are many more types available that have more to do with BGP. These are
-described elsewhere. Note that Roto is case sensitive; writing the ``String`` type as
+described elsewhere. Note that Roto is case-sensitive; writing the ``String`` type as
 ``STRING`` or ``string`` won't work.
 
 Unit type
@@ -210,7 +210,7 @@ Roto:
 | ``not`` | Negation                       |
 +---------+--------------------------------+
 
-Now that we have all the rules for precendence, here is an example using all types of
+Now that we have all the rules for precedence, here is an example using all types of
 operators (arithmetic, comparison and logical):
 
 .. code-block:: roto
@@ -622,7 +622,7 @@ module. Multiple ``super`` keywords can appear at the start of a path.
     super.super.foo.square
 
 There are 3 special identifiers that can only be used at the start of a path
-and automatically make the path an absolute path:
+and automatically make the path into an absolute path:
 
 - ``pkg`` for the current package 
 - ``std`` for the Roto standard library
