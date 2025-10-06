@@ -69,9 +69,6 @@ on:
       - 'opened'
       - 'reopened'
       - 'synchronize'
-  issue_comment:
-    types:
-      - 'created'
 
 permissions: {}
 
@@ -103,7 +100,6 @@ jobs:
           use_magic_file: 1
           report-timing: 1
           warnings: bad-regex,binary-file,deprecated-feature,ignored-expect-variant,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check,unclosed-block-ignore-begin,unclosed-block-ignore-end
-          experimental_apply_changes_via_bot: 1
           check_extra_dictionaries: ""
           dictionary_source_prefixes: >
             {
@@ -120,27 +116,3 @@ jobs:
             cspell1:java/java-terms.txt
             cspell1:python/python/python-lib.txt
             cspell1:fullstack/fullstack.txt
-
-  update:
-    name: Update PR
-    permissions:
-      contents: write
-      pull-requests: write
-      actions: read
-    runs-on: ubuntu-latest
-    if: ${{
-      github.event_name == 'issue_comment' &&
-      github.event.issue.pull_request &&
-      contains(github.event.comment.body, '@check-spelling-bot apply') &&
-      contains(github.event.comment.body, 'https://')
-      }}
-    concurrency:
-      group: spelling-update-${{ github.event.issue.number }}
-      cancel-in-progress: false
-    steps:
-      - name: apply spelling updates
-        uses: check-spelling/check-spelling@v0.0.25
-        with:
-          experimental_apply_changes_via_bot: 1
-          checkout: true
-          ssh_key: '${{ secrets.CHECK_SPELLING }}'
